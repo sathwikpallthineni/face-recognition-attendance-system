@@ -2,6 +2,8 @@
 
     <div class="userdash-main">
       <div class="header">
+        <p>Hour: <%= Time.current.hour %></p>
+<p>Timezone: <%= Time.zone.name %></p>
         <h1>Welcome, <%= student.username %></h1>
         <h1 class= <%= (today_daytype.dayType === "working"? "working" : "Holiday") %>> <%= (today_daytype.dayType === "working"? `Day - ${dayof_workingday+1}` : "Holiday") %></h1>
       </div>
