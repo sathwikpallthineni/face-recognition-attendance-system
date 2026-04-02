@@ -15,6 +15,17 @@ const Calender = require("./models/calander");
 const {studentVerify,adminVerify} = require("./middlewares/roleauth");
 const { text } = require('stream/consumers');
 
+
+mongoose.connect(process.env.MONGO_URL)
+// mongoose.connect("mongodb://127.0.0.1:27017/SMART_ATTENDENCE_SYSTEM")
+.then(() => {
+    console.log("database connected successfully");
+})
+.catch(() => {
+    console.log("failed to connect to dataabse");
+})
+
+
 app.listen(3000,(req,res) => {
     console.log("app started listening");
 });
@@ -27,15 +38,6 @@ app.use(express.static("public"))
 app.use(cookieParser());
 app.use(sessions({ secret: 'secretcode', resave: false, saveUninitialized: false }));
 app.use(flash());
-
-mongoose.connect(process.env.MONGO_URL)
-// mongoose.connect("mongodb://127.0.0.1:27017/SMART_ATTENDENCE_SYSTEM")
-.then(() => {
-    console.log("database connected successfully");
-})
-.catch(() => {
-    console.log("failed to connect to dataabse");
-})
 
 
 app.use((req,res,next) => {
