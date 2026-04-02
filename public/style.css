@@ -687,7 +687,7 @@ button {
 
 /* CONTAINER */
 .container {
-  padding: 20px 30px;
+  padding: 30px 0px  !important
 }
 
 /* FLEX TOP SECTION */
@@ -911,8 +911,10 @@ td.absent {
   }
   /* Stack status + warning */
   .top-section {
+    padding-right: 5px;
     flex-direction: column;
     gap: 20px;
+    width: 100%;
   }
 
   /* Fix status box layout */
@@ -936,12 +938,12 @@ td.absent {
   .status-text {
     font-size: 14px;
   }
-  .status-card{
+  /* .status-card{
     width: 250px;
   }
   .warning-card{
     width: 250px;
-  }
+  } */
  
 }
 /* ===== FIX OVERFLOW PROPERLY ===== */
