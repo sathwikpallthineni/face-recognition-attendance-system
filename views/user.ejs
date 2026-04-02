@@ -1,0 +1,121 @@
+<% layout("./userBoilerplate.ejs") %>
+
+<body>
+    <div class="userdash-main">
+        <h1>Welcome, <%= student.username %></h1>
+         <div class="admindash-cards">
+
+    <div class="admindash-card card-total">
+      <div class="card-icon">👥</div>
+      <div>
+        <h3><%= total_workingdays.length %></h3>
+        <p>Total Working Days</p>
+      </div>
+    </div>
+
+    <div class="admindash-card card-present">
+      <div class="card-icon">✔</div>
+      <div>
+        <h3><%= days_present.length %></h3>
+        <p>Days Present </p>
+      </div>
+    </div>
+    <div class="admindash-card card-absent">
+      <div class="card-icon">✖</div>
+      <div>
+        <h3><%= workingdays.length -  days_present.length%></h3>
+        <p>Days Absent</p>
+      </div>
+    </div>
+    <div class="admindash-card card-rate">
+      <div class="card-icon">📊</div>
+      <div>
+        <h3><%= attendence_rate.toFixed(2) %>%</h3>
+        <p>Attendance Rate</p>
+      </div>
+    </div>
+
+  </div>
+  <div class="container">
+
+  <!-- TOP SECTION -->
+  <div class="top-section">
+
+    <!-- LEFT: STATUS -->
+    <div class="card status-card">
+      <h3>Today's Status</h3>
+      <div class="status-box">
+
+        <div class="icon  <%= (present_today? "success": new Date().getHours() < 11 ?"attention":"error") %> "><%= (present_today? "✔":"✖") %></div>
+        <div>
+          <p class="status-text">
+             <span class= <%= (present_today? "success": new Date().getHours() < 11 ?"attention":"error") %> ><%= (present_today? "You are PRESENT":new Date().getHours() < 11 ?"Mark your Attendence before 11 AM":"You are ABSENT") %></span> today
+          </p>
+          <p class="sub-text"><b>Time</b>: <%= (present_today? present_today.time:"---") %> AM</p>
+          <p class="sub-text"> <%= (present_today?"Face Verified":"") %></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: WARNING -->
+    <div class="card warning-card">
+      <h3>Attendance Warning</h3>
+      <div class= <%= (attendence_rate>75? "warning-box-above": "warning-box") %>>
+  <% if (attendence_rate < 75) { %>
+    <div class="icon warning">⚠</div>
+    <p class="warning-title-below">Attendance below 75%</p>
+    <p class="sub-text">
+      Please improve your attendance to avoid condonation.
+    </p>
+  <% } else { %>
+    <div class="icon success">✅</div>
+    <p class="warning-title-above">Attendance is good</p>
+    <p class="sub-text">
+      You are above the minimum requirement. Keep it up.
+    </p>
+  <% } %>
+</div>
+    </div>
+
+  </div>
+
+  <!-- TABLE SECTION -->
+  <div class="card table-card">
+    <h3>Attendance History</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Status</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% if(student_records.length > 0) {%>
+        <% for(student_record of student_records) {%>
+        <tr>
+          <td><%= student_record.date %></td>
+          <td class=<%= (student_record.status === "Present"? "present" : "absent")%>><%=student_record.status%></td>
+          <td><%= student_record.time %> AM</td>
+        </tr>
+        <%}%>
+        <%}%>
+        <% if(student_records.length === 0) {%>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+        <%}%>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
+  <!-- <div class="userdash-boxes">
+    <div class="today-statusbox"></div>
+    <div class="attendence-historybox"></div>
+  </div> -->
+    </div>
+</body>

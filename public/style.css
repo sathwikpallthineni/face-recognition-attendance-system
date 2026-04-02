@@ -1,0 +1,958 @@
+/* ADMIN NABAR AND SIDEBAR STYLING  */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.Navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+    background-color: #2f3e5c;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.nav-left{
+    margin-left: 20px;
+}
+.nav-right span {
+    margin-right: 15px;
+}
+
+.nav-right button {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    background-color: #2f3e5c;
+}
+.nav-right button:hover{
+  font-size: 20px;
+}
+.nav-right form{
+  display: inline-block;
+}
+.sidebar {
+    position: fixed;
+    top: 60px; 
+    left: 0;
+    width: 220px;
+    height: calc(100% - 60px);
+    background-color: #f4f4f4;
+    padding-top: 20px;
+}
+.sidebar a{
+    text-decoration: none;
+}
+.sidebar ul {
+    list-style: none;
+    padding-left: 0px;
+    /* margin-left: 5px; */
+}
+
+.sidebar ul li {
+    padding: 15px 20px;
+    cursor: pointer;
+    color: #333;
+}
+
+.sidebar ul li:hover {
+    background-color: #ddd;
+}
+
+/* .sidebar ul li.active {
+    background-color: #2f3e5c;
+    color: white;
+} */
+
+.content {
+    margin-left: 220px;
+    margin-top: 60px;
+    padding: 20px;
+    /* background-color: #e6e9ed; */
+}
+.user-content{
+  margin-top: 65px;
+}
+.userdash-main{
+  padding: 30px;
+  min-height: 100vh;
+  background-color: #e6e9ed;
+}
+
+
+/* register student page */
+
+.form-container {
+    max-width: 500px;
+    margin: 30px auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Input groups */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Row for branch & section */
+.row-group {
+    display: flex;
+    gap: 10px;
+}
+
+.half {
+    width: 50%;
+}
+
+/* Button */
+.register-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #2f3e5c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.register-btn:hover {
+    background-color: #1f2c44;
+}
+
+/* Note */
+.note {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+}
+
+.alert{
+    margin-top: 80px;
+    margin-left: 30%;
+    width: 50%;
+    font-size: 20px;
+    text-align: center;
+}
+
+
+/* all-students css */
+
+/* Main content */
+.allstudents-main {
+  padding: 30px;
+  position: relative;
+}
+
+/* Title */
+.allstudents-title {
+  margin-bottom: 20px;
+}
+
+/* Search */
+.allstudents-search input {
+  height: 50px;
+  width: 70%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  margin-bottom: 50px;
+}
+
+
+/* Filters */
+.allstudents-filters {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.allstudents-filters label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.allstudents-filters select {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+/* Table wrapper */
+.allstudents-table-wrapper {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Table */
+.allstudents-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.admindash-table{
+  width: 100%;
+  border-collapse: collapse;
+}
+.admindash-table th,
+.admindash-table td,
+.allstudents-table th,
+.allstudents-table td {
+  padding: 14px;
+  text-align: left;
+}
+.admindash-table thead,
+.allstudents-table thead {
+  background: #f3f4f6;
+}
+.admindash-table ,
+.allstudents-table tbody tr {
+  border-top: 1px solid #eee;
+}
+
+/* Status */
+.allstudents-good {
+  background: #4caf50;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
+.allstudents-low {
+  background: #e74c3c;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+.allstudents-average {
+  background: orange;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 6px;
+}.allstudents-good {
+  background: greenyellow;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 6px;
+}.allstudents-excellent {
+  background: green;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
+/* Buttons */
+.allstudents-block,
+.allstudents-unblock {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+}
+
+.allstudents-block {
+  background: #e74c3c;
+}
+.allstudents-block:hover{
+  background-color: #2f3e5c;
+}
+.allstudents-unblock:hover{
+  background-color: rgb(66, 171, 87);
+}
+.allstudents-unblock {
+  background: #1f3a5f;
+}
+
+/* warning card */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(6px);
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+  z-index: 1000;
+}
+.card {
+  background: #fff;
+  padding: 24px;
+  width: 320px;
+
+}
+.actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.cancel {
+  background: #ccc;
+}
+
+.confirm {
+  background: #e53935;
+  color: white;
+}
+.no-userfound{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 40px;
+}
+
+.block-card{
+  padding: 20px;
+  height: 200px;
+  width: 400px;
+  position: fixed;
+  top: 40%;
+  left: 40%;
+  background-color: white;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  border-radius: 12px;
+  display: none;
+  z-index: 1001;
+  text-align: center;
+}
+
+
+/* Main */
+.calendar-main {
+  padding: 30px;
+}
+
+/* Title */
+.calendar-title {
+  margin-bottom: 20px;
+}
+
+/* Table wrapper */
+.calendar-table-wrapper {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Table */
+.calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.calendar-table th,
+.calendar-table td {
+  padding: 14px;
+  text-align: left;
+}
+
+.calendar-table thead {
+  background: #f3f4f6;
+}
+
+.calendar-table tbody tr {
+  border-top: 1px solid #eee;
+}
+
+.calendar-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+/* Status */
+.calendar-working {
+  background: #4caf50;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
+.calendar-holiday {
+  background: #e74c3c;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
+/* Button */
+.calendar-toggle-btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  background: #1f3a5f;
+  color: white;
+  cursor: pointer;
+}
+
+.calendar-toggle-btn:hover {
+  background: #162c47;
+}
+
+/* ADMIN DAASHBOARD */
+
+/* MAIN */
+.admindash-main {
+  padding: 30px;
+}
+
+.admindash-title {
+  margin-bottom: 20px;
+}
+
+/* CARDS */
+.admindash-cards {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.admindash-card {
+  flex: 1;
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: white;
+}
+
+.admindash-card h3 {
+  font-size: 26px;
+}
+
+.admindash-card p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* ICON */
+.card-icon {
+  font-size: 28px;
+  background: rgba(255,255,255,0.2);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* COLORS */
+.card-total {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+.card-present {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+.card-absent {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+.card-rate {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+}
+
+/* MIDDLE */
+.admindash-middle {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.admindash-box {
+  flex: 1;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.admindash-box h3 {
+  margin-bottom: 15px;
+}
+
+/* PLACEHOLDER */
+.admindash-placeholder {
+  height: 200px;
+  overflow-y: auto;
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* color: #999; */
+  border: 1px dashed #ddd;
+  border-radius: 8px;
+}
+
+/* BOTTOM */
+.admindash-bottom {
+  display: flex;
+  gap: 20px;
+}
+
+/* ACTION CARDS */
+
+/* STATUS */
+.admindash-status {
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.admindash-status h3 {
+  margin-bottom: 10px;
+}
+
+.status-open {
+  color: green;
+  font-weight: bold;
+}
+.status-close{
+  color: red;
+  font-weight: bold;
+}
+
+.admindash-actions {
+  flex: 2;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  /* background-color: #16a34a; */
+  height: 100px;
+  padding: 20px;
+}
+
+.admindash-actions a{
+  text-decoration: none;
+}
+.action-icon {
+  display: inline-block;
+}
+.action-card p{
+  display: inline-block;
+  margin: 0px;
+  padding-left: 5px;
+}
+.action-card{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 33%;
+  /* background-color:  */
+  font-size: 20px;
+  transition: 0.2s ease;
+  border-radius: 4px;
+}
+.take-atten{
+  background-color: #1f2c44;
+}
+.reg-atten{
+  background-color: rgb(66, 130, 170);
+}
+.view-stds{
+  background-color: orange;
+}
+
+/*
+.action-card {
+  flex: 1;
+  background: #1f3a5f;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.action-icon {
+  font-size: 26px;
+}
+*/
+.action-card:hover {
+  background: #162c47;
+  transform: translateY(-3px);
+} 
+.no-attendence{
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* STUDENT PAGE */
+
+/* CARDS */
+.admindash-cards {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.admindash-card {
+  flex: 1;
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: white;
+}
+
+.admindash-card h3 {
+  font-size: 26px;
+}
+
+.admindash-card p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* ICON */
+.card-icon {
+  font-size: 28px;
+  background: rgba(255,255,255,0.2);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* COLORS */
+.card-total {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+.card-present {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+.card-absent {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+.card-rate {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+}
+
+
+/* CONTAINER */
+.container {
+  padding: 20px 30px;
+}
+
+/* FLEX TOP SECTION */
+.top-section {
+  display: flex;
+  gap: 80px;
+  margin-bottom: 20px;
+}
+
+/* LEFT BIG CARD */
+.status-card {
+  flex: 2;
+}
+
+/* RIGHT SMALL CARD */
+.warning-card {
+  flex: 1;
+}
+
+/* CARD BASE */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.card h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #333;
+}
+
+/* STATUS BOX */
+.status-box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #eef7f1;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.status-text {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.present {
+  color: #2e7d32;
+  font-weight: 600;
+}
+.absent{
+  color: red;
+  font-weight: 600;
+}
+
+.sub-text {
+  font-size: 13px;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* WARNING */
+.warning-box {
+  background: #fff4e5;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.warning-box-above{
+  background: rgb(225, 243, 225);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.warning-title-below {
+  font-weight: 600;
+  margin-top: 10px;
+  color: #a66b00;
+}
+.warning-title-above {
+  font-weight: 600;
+  margin-top: 10px;
+  color: green;
+}
+
+/* ICONS */
+.icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.icon.success {
+  background: #4caf50;
+  color: white;
+}
+.icon.error{
+  background-color: red;
+  color: white;
+}
+.icon.attention{
+  color: white;
+  background-color: orange;
+}
+
+.icon.warning {
+  background: #ff9800;
+  color: white;
+}
+
+/* TABLE */
+.table-card {
+  max-height: 300px;
+  width: 100%; /* no stupid 65% */
+  overflow-y: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: #f5f5f5;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  font-size: 14px;
+}
+
+th {
+  color: #555;
+  font-weight: 600;
+}
+
+tbody tr {
+  border-top: 1px solid #eee;
+}
+
+tbody tr:hover {
+  background: #fafafa;
+}
+
+/* STATUS COLORS */
+td.present {
+  color: #2e7d32;
+  font-weight: 500;
+}
+
+td.absent {
+  color: #d32f2f;
+  font-weight: 500;
+}
+
+
+/* =======================
+   RESPONSIVE FIX (REAL)
+======================= */
+
+/* TABLET */
+@media (max-width: 1024px) {
+
+  /* Cards → 2 per row */
+  .admindash-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  /* Reduce huge gap */
+  .top-section {
+    gap: 30px;
+  }
+
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .container {
+    padding: 15px;
+  }
+  .content {
+    margin-left: 0;
+  }
+
+  .userdash-main{
+    padding: 5px;
+  }
+  .card-icon{
+    font-size: 16px;
+  }
+  /* Cards still 2 per row */
+  .admindash-cards {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:7px
+  }
+  .alert{
+    width: 90%;
+    margin-left: 20px;
+  }
+  .admindash-card{
+    padding: 10px 5px;
+  }
+  /* Stack status + warning */
+  .top-section {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Fix status box layout */
+  .status-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Scale down icons */
+  .icon {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  /* Text adjustments */
+  .admindash-card h3 {
+    font-size: 20px;
+  }
+
+  .status-text {
+    font-size: 14px;
+  }
+  .status-card{
+    width: 250px;
+  }
+  .warning-card{
+    width: 250px;
+  }
+ 
+}
+/* ===== FIX OVERFLOW PROPERLY ===== */
+
+/* 1. FIX SIDEBAR PUSHING CONTENT */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  .content {
+    margin-left: 0;
+  }
+}
