@@ -133,6 +133,15 @@ app.get("/",Authenticate,studentVerify,async(req,res,next) => {
     let student = await Student.findById(req.user.id);
     let attendence = await Attendence.find();
     let calendar = await Calender.find();
+     const now = new Date();
+
+  const currentHour = parseInt(
+    new Intl.DateTimeFormat('en-IN', {
+      hour: 'numeric',
+      hour12: false,
+      timeZone: 'Asia/Kolkata'
+    }).format(now)
+  );
     let today = new Date().toISOString().split("T")[0];
     let student_records = attendence.filter((el) => {
        return el.studentid.toString() === student.id.toString()
@@ -163,7 +172,7 @@ app.get("/",Authenticate,studentVerify,async(req,res,next) => {
     })
     let attendence_rate = (days_present.length/workingdays.length) *100;
 
-    res.render("user.ejs",{student,student_records,today_daytype,total_workingdays,workingdays,attendence_rate,days_present,days_absent,present_today,dayof_workingday});
+    res.render("user.ejs",{student,currentHour,student_records,today_daytype,total_workingdays,workingdays,attendence_rate,days_present,days_absent,present_today,dayof_workingday});
 })
 
 

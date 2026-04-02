@@ -2,8 +2,6 @@
 
     <div class="userdash-main">
       <div class="header">
-        <p>Hour: <%= Time.current.hour %></p>
-<p>Timezone: <%= Time.zone.name %></p>
         <h1>Welcome, <%= student.username %></h1>
         <h1 class= <%= (today_daytype.dayType === "working"? "working" : "Holiday") %>> <%= (today_daytype.dayType === "working"? `Day - ${dayof_workingday+1}` : "Holiday") %></h1>
       </div>
@@ -54,10 +52,10 @@
       <h3>Today's Status</h3>
       <div class="status-box">
 
-        <div class="icon  <%= (present_today? "success": new Date().getHours() < 11 ?"attention":"error") %> "><%= (present_today? "✔":"✖") %></div>
+        <div class="icon  <%= (present_today? "success": currentHour < 11 ?"attention":"error") %> "><%= (present_today? "✔":"✖") %></div>
         <div>
           <p class="status-text">
-             <span class= <%= (present_today? "success": new Date().getHours() < 11 ?"attention":"error") %> ><%= (present_today? "You are PRESENT":new Date().getHours() < 11 ?"Mark your Attendence before 11 AM":"You are ABSENT") %></span> today
+             <span class= <%= (present_today? "success": currentHour < 11 ?"attention":"error") %> ><%= (present_today? "You are PRESENT":currentHour < 11 ?"Mark your Attendence before 11 AM":"You are ABSENT") %></span> today
           </p>
           <p class="sub-text"><b>Time</b>: <%= (present_today? present_today.time:"---") %> AM</p>
           <p class="sub-text"> <%= (present_today?"Face Verified":"") %></p>
