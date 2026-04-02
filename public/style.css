@@ -858,7 +858,35 @@ td.absent {
   font-weight: 500;
 }
 
-
+.header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.header .holiday{
+  color: orange;
+}
+.calendar{
+  margin-bottom: 10px;
+}
+.calendar button{
+    background-color: white;
+    border-radius: 4px;
+}
+.calendar button:hover{
+  color: white;
+  background-color: #162c47;
+}
+.Backto-dashboard{
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px;
+}
+.Backto-dashboard:hover{
+  text-decoration: underline;
+}
 /* =======================
    RESPONSIVE FIX (REAL)
 ======================= */

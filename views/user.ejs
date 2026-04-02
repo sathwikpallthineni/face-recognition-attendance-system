@@ -1,7 +1,11 @@
 <% layout("./userBoilerplate.ejs") %>
 
     <div class="userdash-main">
+      <div class="header">
         <h1>Welcome, <%= student.username %></h1>
+        <h1 class= <%= (today_daytype.dayType === "working"? "working" : "Holiday") %>> <%= (today_daytype.dayType === "working"? `Day - ${dayof_workingday+1}` : "Holiday") %></h1>
+      </div>
+        
          <div class="admindash-cards">
 
     <div class="admindash-card card-total">
@@ -22,7 +26,7 @@
     <div class="admindash-card card-absent">
       <div class="card-icon">✖</div>
       <div>
-        <h3><%= workingdays.length -  days_present.length%></h3>
+        <h3><%=days_absent.length%></h3>
         <p>Days Absent</p>
       </div>
     </div>
@@ -38,6 +42,9 @@
   <div class="container">
 
   <!-- TOP SECTION -->
+   <form class="calendar" method="get" action="/calendar">
+    <button>View Semester Calendar</button>
+  </form>
   <div class="top-section">
 
     <!-- LEFT: STATUS -->
@@ -110,7 +117,7 @@
     </table>
 
   </div>
-
+  
 </div>
   <!-- <div class="userdash-boxes">
     <div class="today-statusbox"></div>

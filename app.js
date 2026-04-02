@@ -45,7 +45,6 @@ app.use((req,res,next) => {
     res.locals.failure = req.flash("failure");
     next();
 });
-// sendEmail("23b61a04h2@nmrec.edu.in","testing","Successful");
 
 async function generateToken(req,res,next,user) {
     if(!user.id) {
@@ -143,6 +142,12 @@ app.get("/",Authenticate,studentVerify,async(req,res,next) => {
     })
     let total_workingdays = calendar.filter((el) => {
         return el.dayType === "working"
+    });
+    let today_daytype = calendar.find((el) => {
+        return el.date === today
+    })
+    let dayof_workingday = total_workingdays.findIndex((el) => {
+       return el.date === today
     })
     let workingdays = days.filter((el) => {
         return el.dayType === "working"
@@ -150,11 +155,19 @@ app.get("/",Authenticate,studentVerify,async(req,res,next) => {
     let days_present = student_records.filter((el) => {
        return el.status === "Present"
     })
-    let present_today = student_records.find((el) => {
-        return el.date === today
+    let days_absent = student_records.filter((el) => {
+       return el.status === "Absent"
     })
-    console.log(present_today);
+    let present_today = student_records.find((el) => {
+        return el.date === today && el.status === "Present"
+    })
     let attendence_rate = (days_present.length/workingdays.length) *100;
 
-    res.render("user.ejs",{student,student_records,total_workingdays,workingdays,attendence_rate,days_present,present_today});
+    res.render("user.ejs",{student,student_records,today_daytype,total_workingdays,workingdays,attendence_rate,days_present,days_absent,present_today,dayof_workingday});
+})
+
+
+app.get("/calendar",async (req,res,next) => {
+    let days = await Calender.find();
+    res.render("calender.ejs",{days});
 })

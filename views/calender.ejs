@@ -1,0 +1,36 @@
+<% layout("./userBoilerplate.ejs") %>
+<body>
+  <a class="Backto-dashboard" href="/">< Back to Dashboard</a>
+    <div class="calendar-main">
+
+  <h2 class="calendar-title">Semester Calendar</h2>
+
+  <div class="calendar-table-wrapper">
+    <table class="calendar-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Day Type</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% days.forEach(day => { %>
+          <tr>
+            <td><%= day.date %></td>
+
+            <td>
+              <% if(day.dayType === "working") { %>
+                <span class="calendar-working">Working</span>
+              <% } else { %>
+                <span class="calendar-holiday">Holiday</span>
+              <% } %>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+</body>
