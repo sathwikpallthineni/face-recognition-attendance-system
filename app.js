@@ -85,7 +85,7 @@ async function generateToken(req,res,next,user) {
         return res.redirect("/admin");
     }
     if(user.role === "Student") {
-        return res.redirect("/user");
+        return res.redirect("/");
     }
     
 }
@@ -130,7 +130,7 @@ app.post("/logout",Authenticate,async(req,res,next) => {
     res.redirect("/login");
 })
 
-app.get("/user",Authenticate,studentVerify,async(req,res,next) => {
+app.get("/",Authenticate,studentVerify,async(req,res,next) => {
     let student = await Student.findById(req.user.id);
     let attendence = await Attendence.find();
     let calendar = await Calender.find();
