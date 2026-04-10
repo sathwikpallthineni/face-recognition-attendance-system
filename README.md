@@ -81,5 +81,5 @@ Student access is restricted to registered users only.
 
 ## 🔗 Links
 
-- GitHub Repo: ()  
+- GitHub Repo: (https://github.com/sathwikpallthineni/face-recognition-attendance-system)  
 - Live Dashboard: (https://nmrec-student-attendance.up.railway.app)
